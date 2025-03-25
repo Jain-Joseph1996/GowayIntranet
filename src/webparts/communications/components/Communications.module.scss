@@ -9,8 +9,8 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
   max-width: 100% !important; //so it's as full width webpart 
 }
 
-.spAppAndPropertyPanelContainer .sp-appBar{
-  display: none!important;
+.spAppAndPropertyPanelContainer .sp-appBar {
+  display: none !important;
 }
 
 /* End of hiding default sharePoint headers*/
@@ -64,8 +64,8 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
 .section {
   background-color: #f4f4f4; // Light gray background for each section
   border: 1px solid #ddd; // Border for each section
- // padding: 20px;
- //  border-radius: 8px; // Rounded corners
+  // padding: 20px;
+  //  border-radius: 8px; // Rounded corners
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
   display: flex;
   // margin: 20px;
@@ -222,6 +222,14 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
 
 /* Useful resources section end*/
 
+/* Videos Section */
+.noUnderline {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Videos Section end */
+
 /* Calender Section */
 
 .calendarContainer {
@@ -281,7 +289,9 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
   font-size: 12px;
 }
 
-.events {
+.events,
+.videos,
+.readmore {
   background-color: #F05B2A;
   /* background for the header */
   border-radius: 5px;
@@ -321,10 +331,11 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity here */
 }
 
-.upcomingeventTitle{
+.upcomingeventTitle {
   font-weight: 500;
   margin: 0;
   font-size: 1.5rem;
@@ -332,16 +343,179 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
   text-align: justify;
 }
 
-/* Upcoming events end*/
-
-/* Anniversaries Section */
-
-.img {
-  aspect-ratio: 0.74;
-  object-fit: contain;
-  object-position: center;
+.mainContainer {
+  background-color: #000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 331px;
+  min-height: 300px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Anniversaries Section end */
+.contentWrapper {
+  text-align: center;
+  z-index: 2;
+  padding: 20px;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 40px;
+  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.countdownContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+.timeUnit {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.timeValue {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.timeLabel {
+  color: #fff;
+  text-transform: lowercase;
+  margin-top: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.backgroundOverlay {
+  opacity: 0.5;
+  z-index: 1;
+  background-image: url('../assets/award_night.png');
+  background-position: 50%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 300px;
+}
+
+@media (width <=991px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .countdownContainer {
+    gap: 30px;
+  }
+
+  .timeValue {
+    font-size: 48px;
+  }
+
+  .timeLabel {
+    font-size: 16px;
+  }
+}
+
+@media (width <=640px) {
+  .title {
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  .countdownContainer {
+    gap: 20px;
+  }
+
+  .timeValue {
+    font-size: 36px;
+  }
+
+  .timeLabel {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Upcoming events end*/
+
+/* Celebration Section */
+
+.Celebcontainer {
+  min-height: screen;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 24px;
+  // font-family: Inter, sans-serif;
+  display: flex;
+}
+
+.listWrapper {
+  flex-direction: column;
+  gap: 16px;
+  display: flex;
+}
+
+.celebrationsList {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.celebrationCard {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.avatarContainer {
+  border-radius: 9999px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.celebrationInfo {
+  flex-direction: column;
+  display: flex;
+}
+
+.employeeName {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.celebrationDate,
+.celebrationYears {
+  color: #6b7280;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+/* Celebration Section end */

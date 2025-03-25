@@ -4,6 +4,7 @@ import type { ICommunicationsProps } from './ICommunicationsProps';
 import { Header } from './NavBar';
 import { WebPartContext } from '@microsoft/sp-webpart-base';
 import { Card, CardContent, Avatar, Typography } from "@mui/material";
+import CelebrationList from './CelebrationList';
 
 export interface IMyWebPartProps {
   context: WebPartContext;
@@ -20,7 +21,6 @@ export default class Communications extends React.Component<ICommunicationsProps
     //  // userDisplayName
     // } = this.props;
 
-    const videoUrl = `https://www.youtube.com/watch?v=85srM1-F4ME`;
 
     return (
       <section className={styles.sectionWithBackground}>
@@ -91,6 +91,9 @@ export default class Communications extends React.Component<ICommunicationsProps
                       <time className={styles.newsDate}>March 22, 2024</time>
                     </div>
                   </article>
+                  {/* <div className={styles.readmore}>
+                    Read more
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -110,27 +113,37 @@ export default class Communications extends React.Component<ICommunicationsProps
               </div>
             </div>
             <div className={styles.mainDiv}>
-              <iframe
-                width="400"
-                height="240"
-                src="https://www.youtube.com/watch?v=85srM1-F4ME" // Replace with your video ID
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className={styles.mainDiv}>
-            <a href={videoUrl} target="_blank" rel="noopener noreferrer"></a>
-              <iframe
-                width="400"
-                height="240"
-                src="https://www.youtube.com/watch?v=ivRsglUQWms" // Replace with your video ID
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <div className={styles.header}>
+                Videos
+              </div>
+              <div className={styles.backgroundRectangle}>
+                <iframe
+                  width="100%"
+                  height="200"
+                  style={{ paddingBottom: "10px" }}
+                  src="https://www.youtube.com/embed/lam6oWsfdYY" // Replace with your video ID
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <iframe
+                  width="100%"
+                  height="200"
+                  style={{ paddingBottom: "10px" }}
+                  src="https://www.youtube.com/embed/-wpw9x6OHmM?si=TtGHGtaSbjde0GWp" // Replace with your video ID
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                {/* Rounded button*/}
+                <a href="https://www.youtube.com/@GowayTravel/videos" target="_blank" rel="noopener noreferrer" className={styles.noUnderline}>
+                  <div className={styles.videos}>
+                    Explore
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -144,7 +157,7 @@ export default class Communications extends React.Component<ICommunicationsProps
                 border: '0px',
                 overflow: 'auto',
                 width: '100%',
-                height: '1500px',
+                height: '1495px',
                 minHeight: '1000px'
               }}
             ></iframe>
@@ -197,9 +210,11 @@ export default class Communications extends React.Component<ICommunicationsProps
                     <span className={styles.eventTag}>Meeting</span>
                   </div>
                   {/* Rounded button*/}
-                  <div className={styles.events}>
-                    Events
-                  </div>
+                  <a href="https://goway0.sharepoint.com/sites/Intranet/Lists/Events/calendar.aspx" target="_blank" rel="noopener noreferrer" className={styles.noUnderline}>
+                    <div className={styles.events}>
+                      Events
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -208,11 +223,13 @@ export default class Communications extends React.Component<ICommunicationsProps
                 Upcoming events
               </div>
               <div className={styles.backgroundRectangle}>
-                <div className={styles.eventsBackground}>
-                  <div className={styles.overlay}></div>
-                  <h3 className={styles.upcomingeventTitle}>Annual Awards Ceremony</h3>
-                  {/* <h3 className={styles.upcomingeventTitle}>22 23 42 12</h3> */}
-                </div>
+                <main className={styles.mainContainer}>
+                  <div className={styles.contentWrapper}>
+                    <h1 className={styles.title}>Annual Awards Ceremony</h1>
+                    <div className={styles.countdownContainer}>22 : 23 : 42 : 12</div>
+                    <div className={styles.backgroundOverlay} />
+                  </div>
+                </main>
               </div>
             </div>
             <div className={styles.mainDiv}>
@@ -220,11 +237,12 @@ export default class Communications extends React.Component<ICommunicationsProps
                 Anniversaries
               </div>
               <div className={styles.backgroundRectangle}>
-                <img
+                {/* <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/c53e83e617dc3afb11ad972b2653b4fc622ed28a?placeholderIfAbsent=true"
                   className={styles.img}
                   alt=""
-                />
+                /> */}
+                <CelebrationList />
               </div>
             </div>
           </div>
