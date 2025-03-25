@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.7",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "goway-intranet",
+    "libraryId": "4d9907a8-b255-48f6-a969-288c01d447ea",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "goway_intranet",
+    "solutionShortDescription": "goway_intranet description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

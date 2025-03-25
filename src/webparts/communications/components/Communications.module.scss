@@ -1,0 +1,303 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+
+/* Hiding default sharePoint headers*/
+
+/* Increase width of CanvasZone*/
+
+div[data-automation-id="CanvasZone-SectionContainer"] {
+  max-width: 100% !important; //so it's as full width webpart 
+}
+
+.spAppAndPropertyPanelContainer .sp-appBar{
+  display: none!important;
+}
+
+/* End of hiding default sharePoint headers*/
+
+.communications {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card-body {
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+/* Backgound image section */
+.sectionWithBackground {
+  background-image: url('../assets/Landingpage_banner_img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  padding: 20px;
+  color: white;
+}
+
+
+.container {
+  display: flex;
+  gap: 20px; // Space between sections
+  padding: 20px;
+}
+
+.section {
+  background-color: #f4f4f4; // Light gray background for each section
+  border: 1px solid #ddd; // Border for each section
+  padding: 20px;
+  border-radius: 8px; // Rounded corners
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
+  display: flex;
+  margin: 20px;
+}
+
+.width30 {
+  width: 30%
+}
+
+.width40 {
+  width: 40%
+}
+
+.margin20 {
+  margin: 20px;
+}
+
+.mainDiv {
+  height: fit-content;
+  padding-bottom: 15px;
+}
+
+/* Background rectangle */
+.backgroundRectangle {
+  background-color: white;
+  /* White background */
+  padding: 20px;
+  /* Padding inside the rectangle */
+  min-height: 300px;
+  /* Minimum height */
+  box-shadow: 0 4px 8px #585858;
+  /* Optional: Add a shadow for depth */
+}
+
+/* Header with rounded rectangle */
+.header {
+  background-color: #F05B2A;
+  /* background for the header */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 5px 10px;
+  /* Padding inside the header */
+  color: white;
+  /* White text */
+  font-size: 20px;
+  /* Text size */
+  font-weight: bold;
+  /* Bold text */
+  text-align: center;
+  /* Center-align text */
+  width: auto;
+  /* auto to the match parent */
+}
+
+.section h2 {
+  margin-top: 0;
+  color: #333; // Dark text for headings
+}
+
+.section p {
+  color: #666; // Lighter text for content
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: "[theme:link, default:#03787c]";
+    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+
+    &:hover {
+      text-decoration: underline;
+      color: "[theme:linkHovered, default: #014446]";
+      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+    }
+  }
+}
+
+/* news section*/
+.newsContainer {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.newsItem {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 15px;
+  display: flex;
+}
+
+.newsImage {
+  object-fit: cover;
+  border-radius: 4px;
+  width: 80px;
+  height: 60px;
+}
+
+.newsContent {
+  margin-left: 15px;
+}
+
+.newsTitle {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+}
+
+.newsDate {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* news section end */
+
+/* Useful resources section */
+
+.resourcesSection {
+  margin-top: 20px;
+}
+
+.resourcesNav {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.resourceButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #f05b2a;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: background-color 0.3s;
+  background: transparent;
+  font-family: inherit;
+}
+
+.resourceButton:last-child {
+  margin-bottom: 0;
+}
+
+/* Useful resources section end*/
+
+/* Calender Section */
+
+.calendarContainer {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.event {
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  color: black;
+}
+
+.event:last-child {
+  margin-bottom: 0;
+}
+
+.eventDate {
+  text-align: center;
+  min-width: 50px;
+}
+
+.eventDay {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.eventMonth {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.eventDetails {
+  flex-grow: 1;
+}
+
+.eventTitle {
+  font-weight: 500;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.eventTime {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.eventTag {
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.events {
+  background-color: #F05B2A;
+  /* background for the header */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 5px 10px;
+  /* Padding inside the header */
+  color: white;
+  /* White text */
+  font-size: 20px;
+  /* Text size */
+  font-weight: bold;
+  /* Bold text */
+  text-align: center;
+  /* Center-align text */
+  width: auto;
+  /* auto to the match parent */
+}
+
+
+/* Calender Section end */

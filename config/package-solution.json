@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "goway-intranet-client-side-solution",
+    "id": "4d9907a8-b255-48f6-a969-288c01d447ea",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "goway_intranet description"
+      },
+      "longDescription": {
+        "default": "goway_intranet description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "goway-intranet Feature",
+        "description": "The feature that activates elements of the goway-intranet solution.",
+        "id": "e7a8b807-875b-4d96-a160-642bc02928ea",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/goway-intranet.sppkg"
+  }
+}

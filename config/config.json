@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "communications-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/communications/CommunicationsWebPart.js",
+          "manifest": "./src/webparts/communications/CommunicationsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CommunicationsWebPartStrings": "lib/webparts/communications/loc/{locale}.js"
+  }
+}
