@@ -18,6 +18,7 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
 .communications {
   overflow: hidden;
   padding: 1em;
+  display: flex;
   color: "[theme:bodyText, default: #323130]";
   color: var(--bodyText);
 
@@ -63,11 +64,11 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
 .section {
   background-color: #f4f4f4; // Light gray background for each section
   border: 1px solid #ddd; // Border for each section
-  padding: 20px;
-  border-radius: 8px; // Rounded corners
+ // padding: 20px;
+ //  border-radius: 8px; // Rounded corners
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
   display: flex;
-  margin: 20px;
+  // margin: 20px;
 }
 
 .width30 {
@@ -301,3 +302,46 @@ div[data-automation-id="CanvasZone-SectionContainer"] {
 
 
 /* Calender Section end */
+
+/* Upcoming events*/
+.eventsBackground {
+  background-image: url('../assets/award_night.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+}
+
+.upcomingeventTitle{
+  font-weight: 500;
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+  text-align: justify;
+}
+
+/* Upcoming events end*/
+
+/* Anniversaries Section */
+
+.img {
+  aspect-ratio: 0.74;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  max-width: 331px;
+}
+
+/* Anniversaries Section end */
