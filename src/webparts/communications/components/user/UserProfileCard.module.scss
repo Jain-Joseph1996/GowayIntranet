@@ -1,0 +1,58 @@
+.userProfileCard {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  margin: 8px 0;
+
+  .profileImageContainer {
+    margin-right: 16px;
+
+    .profileImage {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e1e1e1;
+    }
+  }
+
+  .profileDetails {
+    flex: 1;
+
+    .displayName {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .jobTitle {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .department {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .contactInfo {
+      .email {
+        font-size: 13px;
+        color: #0078d4;
+      }
+    }
+  }
+}
+
+.error {
+  color: #a4262c;
+  padding: 8px;
+  background-color: #fdf6f6;
+  border: 1px solid #a4262c;
+  border-radius: 4px;
+  font-size: 14px;
+}

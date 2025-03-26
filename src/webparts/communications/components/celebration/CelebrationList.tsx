@@ -1,7 +1,7 @@
 import * as React from "react";
-import styles from "./Communications.module.scss";
+import styles from "../Communications.module.scss";
 import { CelebrationCard } from "./CelebrationCard";
-import { CelebrationData } from "./celebrationtype";
+import { CelebrationData } from "../../models/ICelebrationtypeProps";
 
 const celebrationData: CelebrationData[] = [
   {

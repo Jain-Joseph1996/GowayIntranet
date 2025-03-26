@@ -1,27 +1,49 @@
 import * as React from 'react';
 import styles from './Communications.module.scss';
-import type { ICommunicationsProps } from './ICommunicationsProps';
-import { Header } from './NavBar';
-import { WebPartContext } from '@microsoft/sp-webpart-base';
+import type { ICommunicationsProps } from '../models/ICommunicationsProps';
+import { Header } from './navbar/NavBar';
 import { Card, CardContent, Avatar, Typography } from "@mui/material";
-import CelebrationList from './CelebrationList';
+import CelebrationList from './celebration/CelebrationList';
+import { UserService } from '../services/UserService';
+import { IUserProfile } from '../models/IUserProfile';
+import { UserProfileCard } from './user/UserProfileCard';
 
-export interface IMyWebPartProps {
-  context: WebPartContext;
+export interface ICommunicationsState {
+  userProfile?: IUserProfile;
+  loading: boolean;
+  error?: string;
 }
 
+export default class Communications extends React.Component<ICommunicationsProps, ICommunicationsState> {
 
-export default class Communications extends React.Component<ICommunicationsProps, IMyWebPartProps> {
+  private userService: UserService;
+
+  constructor(props: ICommunicationsProps) {
+    super(props);
+    this.state = { loading: true };
+    this.context = props.context;
+    this.userService = new UserService(
+      props.context.spHttpClient,
+      props.context.pageContext.web.absoluteUrl,
+      props.context
+
+    );
+  }
+
+  public async componentDidMount() {
+    try {
+      const userProfile = await this.userService.getCurrentUserProfile();
+      this.setState({ userProfile, loading: false });
+    } catch (error) {
+      this.setState({
+        error: "Failed to load user details",
+        loading: false
+      });
+    }
+  }
+
+
   public render(): React.ReactElement<ICommunicationsProps> {
-    // const {
-    //  // description,
-    //  // isDarkTheme,
-    //   //environmentMessage,
-    //   hasTeamsContext,
-    //  // userDisplayName
-    // } = this.props;
-
-
     return (
       <section className={styles.sectionWithBackground}>
         {/* Navigation Bar */}
@@ -30,6 +52,10 @@ export default class Communications extends React.Component<ICommunicationsProps
           {/* Section 1 */}
           <div className={`${styles.width30} ${styles.margin20}`}>
             <div className={styles.mainDiv}>
+              {/* Add user profile section */}
+              <div className={styles.userProfileSection}>
+                <UserProfileCard />
+              </div>
               <Card sx={{ display: "flex", alignItems: "center", padding: 2, boxShadow: 3, borderRadius: 2 }}>
                 <Avatar src="../assets/user_img.png" alt="User Profile" sx={{ width: 56, height: 56, marginRight: 2 }} />
                 <CardContent>
@@ -173,7 +199,7 @@ export default class Communications extends React.Component<ICommunicationsProps
               <div className={styles.backgroundRectangle}>
                 {/* Content inside the background rectangle */}
                 <div className={styles.calendarContainer}>
-                  <img src={require('../assets/calender_img.jpg')} />
+                  <img src={require('../assets/calender_img.jpg')} style={{ width: '100%' }} />
                   <div className={styles.event}>
                     <div className={styles.eventDate}>
                       <div className={styles.eventDay}>5</div>

@@ -8,7 +8,7 @@ export const Header = () => {
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
     <Toolbar>
       <Typography variant="h6" sx={{ flexGrow: 1 }}>
-      <img src={require('../assets/logo.png')}  alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
+      <img src={require('../../assets/logo.png')}  alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
       </Typography>
 
       {/* Search Bar */}

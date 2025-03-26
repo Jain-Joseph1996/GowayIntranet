@@ -1,6 +1,6 @@
 import * as React from "react";
-import styles from "./Communications.module.scss";
-import { CelebrationData } from "./celebrationtype";
+import styles from "../Communications.module.scss";
+import { CelebrationData } from "../../models/ICelebrationtypeProps";
 
 interface CelebrationCardProps {
   celebration: CelebrationData;
